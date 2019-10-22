@@ -12,6 +12,7 @@ alias gcl='git clone'
 alias ga='git add '
 alias gau='git add --update' #nur geänderte Dateien
 alias gaa='git add -A' # alle Dateien, auch neue
+alias grm='git rm --cached' # Datei aus git löschen aber nich aus dem Dateisystem
 alias gb='git branch '
 alias gci='git commit -m '
 alias gbr='git branch' # Branches anzeigen
