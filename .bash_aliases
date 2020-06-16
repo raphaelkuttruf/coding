@@ -1,3 +1,5 @@
+# Linux
+
 #Allgemein
 alias ..='cd ..'
 
@@ -12,7 +14,8 @@ alias lr='ll -R' # Recursiv
 
 #Git
 alias gv='git --version'
-alias gst='git status --untracked-files'
+alias gst='git status --untracked-files' # In gesamten Repository
+alias gst.='git status --untracked-files .' # In aktuellem  Order
 alias gcl='git clone'
 alias ga='git add'
 alias gau='git add --update' #nur geänderte Dateien
