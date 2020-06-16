@@ -1,3 +1,6 @@
+## Windows Bash
+  #Diese Datei ins Benutzerverzeichnis ablegen. z.B.: C:\Users\raphael.kuttruf
+
 #Allgemein
 alias ..='cd ..'
 alias ls="ls -lv --group-directories-first" # Alphabetische Liste, Ordner zuerst
@@ -7,7 +10,8 @@ alias la='ll -A' # Alles in diesem Verzeichnis
 
 #Git
 alias gv='git --version'
-alias gst='git status --untracked-files'
+alias gst='git status --untracked-files' # In gesamten Repository
+alias gst.='git status --untracked-files .' # In aktuellem  Order
 alias gcl='git clone'
 alias ga='git add'
 alias gau='git add --update' #nur geänderte Dateien
