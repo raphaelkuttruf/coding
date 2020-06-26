@@ -24,7 +24,11 @@ alias gbr='git branch' # Branches anzeigen oder neuen Branch erstellen mit 'git 
 alias gbrr='git branch -r' # Remote Branches anzeigen
 alias gco='git checkout ' # Branch wechseln oder Datei zurücksetzen mit 'git checkout --file.cpp'
 alias gcom='git checkout master' # zum Master Branch wechseln
+alias gph='git push' # Gewählter Branch sendet Updates an remote Branch mit 'gph [quellbranchname] [zielbranchname]'
+alias gpho='git push origin' # Aktiver Branch sendet Updates an remote Branch mit 'gpho [branchname]'
 alias gphom='git push origin master'
+alias gpl='git pull' # Gewählter Branch empfängt Updates von remote Branch mit 'gpl [zielbranchname] [quellbranchname]'
+alias gplo='git pull' # Aktiver Branch empfängt Updates von remote Branch mit 'gplo [quellbranchname]'
 alias gplom='git pull origin master'
 
 alias grao='git remote add origin' # Remote Repository hinzufügen
