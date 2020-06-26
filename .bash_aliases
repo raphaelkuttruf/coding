@@ -24,11 +24,15 @@ alias gr='git restore' # Änderungen rückgängig machen
 alias grm='git rm --cached' # Datei aus git löschen aber nich aus dem Dateisystem
 alias gcm='git commit -m' # normaler Commit
 alias gcs='git commit -S -m' # signierter Commit (GPG) 
-alias gbr='git branch' # Branches anzeigen oder neuen Branch erstellen mit 'git branch [branchname]'
+alias gbr='git branch' # Branches anzeigen oder neuen Branch erstellen mit 'gbr [branchname]'
 alias gbrr='git branch -r' # Remote Branches anzeigen
 alias gco='git checkout ' # Branch wechseln oder Datei zurücksetzen mit 'git checkout --file.cpp'
 alias gcom='git checkout master' # zum Master Branch wechseln
+alias gph='git push' # Gewählter Branch sendet Updates an remote Branch mit 'gph [quellbranchname] [zielbranchname]'
+alias gpho='git push origin' # Aktiver Branch sendet Updates an remote Branch mit 'gpho [branchname]'
 alias gphom='git push origin master'
+alias gpl='git pull' # Gewählter Branch empfängt Updates von remote Branch mit 'gpl [zielbranchname] [quellbranchname]'
+alias gplo='git pull' # Aktiver Branch empfängt Updates von remote Branch mit 'gplo [quellbranchname]'
 alias gplom='git pull origin master'
 
 alias grao='git remote add origin' # Remote Repository hinzufügen
