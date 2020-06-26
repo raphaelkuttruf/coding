@@ -28,7 +28,7 @@ alias gph='git push' # Gewählter Branch sendet Updates an remote Branch mit 'gp
 alias gpho='git push origin' # Aktiver Branch sendet Updates an remote Branch mit 'gpho [branchname]'
 alias gphom='git push origin master'
 alias gpl='git pull' # Gewählter Branch empfängt Updates von remote Branch mit 'gpl [zielbranchname] [quellbranchname]'
-alias gplo='git pull' # Aktiver Branch empfängt Updates von remote Branch mit 'gplo [quellbranchname]'
+alias gplo='git pull origin' # Aktiver Branch empfängt Updates von remote Branch mit 'gplo [quellbranchname]'
 alias gplom='git pull origin master'
 
 alias grao='git remote add origin' # Remote Repository hinzufügen
