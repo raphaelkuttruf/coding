@@ -8,6 +8,7 @@ My Coding Setup
 2. <https://git-scm.com/>
 3. <https://git-lfs.github.com/>
 4. Type 'git clone https://github.com/raphaelkuttruf/coding.git' in git bash
+5. Type 'cd coding' in git bash
 5. Type 'start InstallOnWindows.bat' in git bash
 
 ## Git
