@@ -1,4 +1,5 @@
 # Linux
+##
 
 #Allgemein
 alias ..='cd ..'
@@ -21,7 +22,8 @@ alias ga='git add'
 alias gau='git add --update' # nur geänderte Dateien
 alias gaa='git add -A' # alle Dateien, auch neue
 alias grr='git restore' # Änderungen für Datei rückgängig machen mit 'git restore [dateiname]'
-alias grt='git reset' # git add für Datei rückgängig machen mit 'git reset [dateiname]'
+alias grt='git reset' # git add für Datei rückgängig machen mit 'git reset [dateiname]' oder repository auf commit zurücksetzen (dateien bleiben erhalten) mit 'git reset [SHA]'
+alias grth='git reset --hard' # git add für Datei rückgängig machen mit 'git reset [dateiname]' oder repository auf commit zurücksetzen mit 'git reset [SHA]'
 alias grm='git rm' # Datei aus git und dem Dateisystem löschen
 alias grmc='git rm --cached' # Datei aus git löschen aber nich aus dem Dateisystem
 alias gcm='git commit -m' # normaler Commit
