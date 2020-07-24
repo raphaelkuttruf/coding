@@ -37,7 +37,28 @@ alias gplo='git pull origin' # Aktiver Branch empfängt Updates von remote Branc
 alias gplom='git pull origin master'
 
 alias grao='git remote add origin' # Remote Repository hinzufügen
-alias grv='git remote -v'
+alias grv='git remote -v' # Remote Repositorys anzeigen
+
+alias gln='git log -n' # Die letzten n Commits anzeigen mit 'gln [n]'
+alias glm='git log --author="$(git config user.name)" -n' # Meine Commits anzeigen mit 'glm' (git log me)
+alias glmn='git log --author="$(git config user.name)" -n' # Meine letzten n Commits anzeigen mit 'glmn [n]' (git log me n)
+# Commits von bestimmtem Autor anzeigen mit 'gla "[author]"'
+#alias gla='read -p "author:" author && git log --author="$author"' 
+gla () {
+    # $1 = author 
+   #echo "Parameter #author is $1"
+    git log --author="$1"
+}
+# Die letzten n Commits von bestimmtem Autor anzeigen mit 'glan "[author]" [n]'
+#alias glan='read -p "author:" author && read -p "n:" n && git log --author="$author" -n $n'
+glan () {
+    # $1 = author 
+    # $2 = n 
+   #echo "Parameter #author is $1 and #n is $2"
+    git log --author="$1" -n $2
+}
+
+#alias glcn'git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -n'
 
 alias glfi='git lfs install' # Installation von git LFS
 # https://docs.github.com/en/github/managing-large-files/installing-git-large-file-storage
