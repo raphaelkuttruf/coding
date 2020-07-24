@@ -43,3 +43,8 @@ alias gplom='git pull origin master'
 
 alias grao='git remote add origin' # Remote Repository hinzufügen
 alias grv='git remote -v'
+
+alias glfi='git lfs install' # Installation von git LFS
+# https://docs.github.com/en/github/managing-large-files/installing-git-large-file-storage
+alias glft='git lfs track' # Datei mit git large files storage beobachten 'git lfs track [dateiname]' (geht auch mit dateitypen, besser nur im lokalen Repository nutzen)
+# https://docs.github.com/en/github/managing-large-files/configuring-git-large-file-storage
