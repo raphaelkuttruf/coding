@@ -7,6 +7,8 @@ My Coding Setup
 1. <https://code.visualstudio.com/>
 2. <https://git-scm.com/>
 3. <https://git-lfs.github.com/>
+4. Type 'git clone https://github.com/raphaelkuttruf/coding.git' in git bash
+5. Type 'start InstallOnWindows.bat' in git bash
 
 ## Git
 
