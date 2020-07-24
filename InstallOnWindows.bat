@@ -1,0 +1,1 @@
+copy .bashrc %HOMEPATH%\.bashrc
