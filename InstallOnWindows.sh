@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cp .bash_aliases ~
+cp .bashrc ~
 
 ./CreateGithubSSH-Key.sh

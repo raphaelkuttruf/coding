@@ -1,14 +1,25 @@
 # Windows Bash
 ## Diese Datei ins Benutzerverzeichnis ablegen. z.B.: C:\Users\raphael.kuttruf
 
-#Allgemein
+# Allgemein
 alias ..='cd ..'
+
 alias ls="ls -lv --group-directories-first" # Alphabetische Liste, Ordner zuerst
 alias ll='ls -l' # Details
 alias lr='ll -R' # Recursiv
 alias la='ll -A' # Alles in diesem Verzeichnis
 
-#Git
+# SSH
+
+gclssh () {
+    # Clone Repository using SSH
+    # $1 = user/repo
+    git clone git@github.com:$1.git
+}
+
+alias gssha='ssh git@github.com' # Check Authentication with gssh or clone Repository with gssh:[user]/[repo].git]
+
+# Git
 alias gv='git --version'
 alias gst='git status --untracked-files' # In gesamten Repository
 alias gsth='git status --untracked-files .' # Hier in aktuellem Order
