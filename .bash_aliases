@@ -26,8 +26,10 @@ alias grt='git reset' # git add für Datei rückgängig machen mit 'git reset [d
 alias grth='git reset --hard' # git add für Datei rückgängig machen mit 'git reset [dateiname]' oder repository auf commit zurücksetzen mit 'git reset [SHA]'
 alias grm='git rm' # Datei aus git und dem Dateisystem löschen
 alias grmc='git rm --cached' # Datei aus git löschen aber nich aus dem Dateisystem
-alias gcm='git commit -m' # normaler Commit
-alias gcs='git commit -S -m' # signierter Commit (GPG) 
+alias gcm='git commit -m' # normaler Commit mit gcm "[Message]"
+alias gcam='git commit --amend -m' # normale Commit Message ändern mit gcam "[neue Message]"
+alias gcs='git commit -S -m' # signierter Commit (GPG) mit gcs "[Message]"
+alias gcas='git commit --amend -S -m' # signierte Commit Message ändern (GPG) mit gcas "[neue Message]"
 alias gbr='git branch' # Branches anzeigen oder neuen Branch erstellen mit 'gbr [branchname]'
 alias gbrr='git branch -r' # Remote Branches anzeigen
 alias gco='git checkout ' # Branch wechseln oder Datei zurücksetzen mit 'git checkout --file.cpp'
@@ -44,6 +46,7 @@ alias gplom='git pull origin master'
 alias grao='git remote add origin' # Remote Repository hinzufügen
 alias grv='git remote -v' # Remote Repositorys anzeigen
 
+alias glg='git log' # Die Commit Historie anzeigen mit 'glg'
 alias gln='git log -n' # Die letzten n Commits anzeigen mit 'gln [n]'
 alias glm='git log --author="$(git config user.name)" -n' # Meine Commits anzeigen mit 'glm' (git log me)
 alias glmn='git log --author="$(git config user.name)" -n' # Meine letzten n Commits anzeigen mit 'glmn [n]' (git log me n)
