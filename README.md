@@ -9,18 +9,38 @@ My Coding Setup
 3. <https://git-lfs.github.com/>
 4. Type 'git clone https://github.com/raphaelkuttruf/coding.git' in git bash
 5. Type 'cd coding' in git bash
-5. Type 'start InstallOnWindows.bat' in git bash
+6. Type 'start InstallOnWindows.bat' in git bash or run InstallOnLinux.sh in Terminal
 
-## Git
+### Git
 
-Files with aliases for Windows 
+Files that are copied for Windows 
 
 >.bashrc
+>.\ssh\config
 
 and Linux
 
 >.bash_aliases
 
-### Info
+### Create SSH Key for Github
 
+> cd ~\.ssh\
+
+>ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+>id_rsa_github
+
+### Create GPG Signing Key for Github
+
+>gpg --full-generate-key
+
+>gpg --list-secret-keys --keyid-format LONG
+
+>gpg --armor --export [Public Key]
+
+#### Info
+
+<https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent>
+<https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification>
 <https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/>
+<https://gist.github.com/bsara/5c4d90db3016814a3d2fe38d314f9c23>
