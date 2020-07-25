@@ -41,7 +41,9 @@ and Linux
 #### Info
 
 <https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent>
+<https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man1/ssh-keygen.1?query=ssh-keygen&sec=1>
 <https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification>
 <https://github.blog/2015-06-08-how-to-undo-almost-anything-with-git/>
 <https://gist.github.com/bsara/5c4d90db3016814a3d2fe38d314f9c23>
 <https://stackoverflow.com/questions/18544359/how-to-read-user-input-into-a-variable-in-bash>
+<https://www.raspberrypi.org/documentation/linux/usage/bashrc.md>
