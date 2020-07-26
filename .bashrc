@@ -21,15 +21,15 @@ alias gssha='ssh git@github.com' # Check Authentication with gssh or clone Repos
 
 # Git
 alias gv='git --version'
-alias gst='git status --untracked-files' # In gesamten Repository
-alias gsth='git status --untracked-files .' # Hier in aktuellem Order
+alias gst='git status --untracked-files -s; gds' # Repository Status abfragen und Infos zu Änderungen anzeigen
+alias gds="git diff --stat | tail -n1" # Differenz Informationen anzeigen
 alias gcl='git clone'
 alias ga='git add'
 alias gau='git add --update' # nur geänderte Dateien
 alias gaa='git add -A' # alle Dateien, auch neue
 alias grr='git restore' # Änderungen für Datei rückgängig machen mit 'git restore [dateiname]'
-alias grt='git reset' # git add für Datei rückgängig machen mit 'git reset [dateiname]' oder repository auf commit zurücksetzen (dateien bleiben erhalten) mit 'git reset [SHA]'
-alias grth='git reset --hard' # git add für Datei rückgängig machen mit 'git reset [dateiname]' oder repository auf commit zurücksetzen mit 'git reset [SHA]'
+alias grt='git reset -q; gst' # git add für Datei rückgängig machen mit 'git reset [dateiname]' oder repository auf commit zurücksetzen (dateien bleiben erhalten) mit 'git reset [SHA]'
+alias grth='git reset --hard -q; gst' # git add für Datei rückgängig machen mit 'git reset [dateiname]' oder repository auf commit zurücksetzen mit 'git reset [SHA]'
 alias grm='git rm' # Datei aus git und dem Dateisystem löschen
 alias grmc='git rm --cached' # Datei aus git löschen aber nich aus dem Dateisystem
 alias gcm='git commit -m' # normaler Commit mit gcm "[Message]"

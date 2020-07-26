@@ -25,15 +25,15 @@ alias gssha='ssh git@github.com' # Check Authentication with gssh or clone Repos
 
 # Git
 alias gv='git --version'
-alias gst='git status --untracked-files' # In gesamten Repository
-alias gsth='git status --untracked-files .' # Hier in aktuellem Order
+alias gst='git status --untracked-files -s; gds' # Repository Status abfragen und Infos zu Änderungen anzeigen
+alias gds="git diff --stat | tail -n1" # Differenz Informationen anzeigen
 alias gcl='git clone'
 alias ga='git add'
 alias gau='git add --update' # nur geänderte Dateien
 alias gaa='git add -A' # alle Dateien, auch neue
 alias grr='git restore' # Änderungen für Datei rückgängig machen mit 'git restore [dateiname]'
-alias grt='git reset' # git add für Datei rückgängig machen mit 'git reset [dateiname]' oder repository auf commit zurücksetzen (dateien bleiben erhalten) mit 'git reset [SHA]'
-alias grth='git reset --hard' # git add für Datei rückgängig machen mit 'git reset [dateiname]' oder repository auf commit zurücksetzen mit 'git reset [SHA]'
+alias grt='git reset -q; gst' # git add für Datei rückgängig machen mit 'git reset [dateiname]' oder repository auf commit zurücksetzen (dateien bleiben erhalten) mit 'git reset [SHA]'
+alias grth='git reset --hard -q; gst' # git add für Datei rückgängig machen mit 'git reset [dateiname]' oder repository auf commit zurücksetzen mit 'git reset [SHA]'
 alias grm='git rm' # Datei aus git und dem Dateisystem löschen
 alias grmc='git rm --cached' # Datei aus git löschen aber nich aus dem Dateisystem
 alias gcm='git commit -m' # normaler Commit mit gcm "[Message]"
@@ -83,3 +83,34 @@ alias glfi='git lfs install' # Installation von git LFS
 # https://docs.github.com/en/github/managing-large-files/installing-git-large-file-storage
 alias glft='git lfs track' # Datei mit git large files storage beobachten 'git lfs track [dateiname]' (geht auch mit dateitypen, besser nur im lokalen Repository nutzen)
 # https://docs.github.com/en/github/managing-large-files/configuring-git-large-file-storage
+
+
+
+# bash prompt
+
+# https://stackoverflow.com/questions/3162444/git-count-files-in-the-staged-index
+git_info_changed_tracked() {
+    if [ -d .git ]; then
+        git status -s | egrep "^ M" | wc -l | tr -d ' '
+    fi;
+}
+
+git_info_changed_staged() {
+    if [ -d .git ]; then
+        git status -s | egrep "^M" | wc -l | tr -d ' '
+    fi;
+}
+
+git_info(){
+    if [ -d .git ]; then
+        git_info_changed_tracked | git_info_changed_staged | tr -d ' '
+    fi;
+}
+
+parse_git_branch() {
+    if [ -d .git ]; then
+        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+    fi;
+}
+## replace PS1=.. in .bashrc with:
+#PS1='${debian_chroot:+($debian_chroot)}\[\e[01;32m\]\u\e[00m\]\[\e[01;93m\]@\e[00m\]\[\e[01;96m\]\h\[\e[00m\]\[\e[01;93m\]:\e[00m\]\[\e[01;34m\]\w\[\e[00m\]\e[32m$(parse_git_branch)\e[00m\]\e[31m$(git_info_changed_tracked)\e[00m\e[35m$(git_info_changed_staged)\e[00m\[\e[93m\]\$\[\e[00m\]'
