@@ -38,6 +38,8 @@ and Linux
 
 >gpg --armor --export [Public Key]
 
+>git config --global user.signingkey [Public Key]
+
 #### Info
 
 <https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent>
