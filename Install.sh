@@ -3,9 +3,9 @@
 # Copy .bashrc to ~ if it doesn't exist. (like on windows)
 if [[ -f ~/.bashrc ]]
 then
-    cp .bashrc ~
-else
     echo ".bashrc exists."
+else
+    cp .bashrc ~
 fi
 
 cp .bash_aliases ~
@@ -15,9 +15,9 @@ cp .bash_aliases ~
 # Copy config to ~ if it doesn't exist. (like on windows)
 if [[ -f ~/.ssh/config ]]
 then
-    cp config ~/.ssh
-else
     echo ".ssh/config exists."
+else
+    cp config ~/.ssh
 fi
 
 ssh -T git@github.com
