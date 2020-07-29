@@ -4,8 +4,8 @@
 # Allgemein
 alias ..='cd ..'
 
-alias ll='ls -alF'
-alias la='ls -A'
+alias ll='ls -alF --group-directories-first'
+alias la='ls -AF --group-directories-first'
 alias l='ls -CF'
 
 #alias ls="ls -lv --group-directories-first" # Alphabetische Liste, Ordner zuerst
