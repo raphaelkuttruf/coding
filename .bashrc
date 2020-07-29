@@ -9,34 +9,51 @@ alias ll='ls -l' # Details
 alias lr='ll -R' # Recursiv
 alias la='ll -A' # Alles in diesem Verzeichnis
 
-# SSH
+# Git
 
+alias gv='git --version'
+alias gssha='ssh -T git@github.com' # Check Authentication with gssh or clone Repository with gssh:[user]/[repo].git]
+alias gds="git diff --stat | tail -n1" # Differenz Informationen anzeigen
+#alias gst='git status --untracked-files -s' 
+gst () {
+    # Repository Status abfragen und Infos zu Änderungen anzeigen
+    git status --untracked-files -s $1
+    gds
+}
+alias gcl='git clone'
+gclhttps () {
+    # Clone Repository using https
+    # $1 = user/repo
+    git clone https://github.com/$1.git
+}
 gclssh () {
     # Clone Repository using SSH
     # $1 = user/repo
     git clone git@github.com:$1.git
 }
-
-alias gssha='ssh git@github.com' # Check Authentication with gssh or clone Repository with gssh:[user]/[repo].git]
-
-# Git
-alias gv='git --version'
-alias gst='git status --untracked-files -s; gds' # Repository Status abfragen und Infos zu Änderungen anzeigen
-alias gds="git diff --stat | tail -n1" # Differenz Informationen anzeigen
-alias gcl='git clone'
-alias ga='git add'
-alias gau='git add --update' # nur geänderte Dateien
-alias gaa='git add -A' # alle Dateien, auch neue
-alias grr='git restore' # Änderungen für Datei rückgängig machen mit 'git restore [dateiname]'
-alias grt='git reset -q; gst' # git add für Datei rückgängig machen mit 'git reset [dateiname]' oder repository auf commit zurücksetzen (dateien bleiben erhalten) mit 'git reset [SHA]'
-alias grth='git reset --hard -q; gst' # git add für Datei rückgängig machen mit 'git reset [dateiname]' oder repository auf commit zurücksetzen mit 'git reset [SHA]'
+alias ga='git add' # stage Datei [dateiname] 
+alias gau='git add --update' # stage nur geänderte Dateien
+alias gaa='git add -A; gst' # stage alle Dateien, auch neue
+alias grr='git restore' # Änderungen für Datei rückgängig machen mit 'grr [dateiname]'
+#alias grt='git reset -q; gst'  
+grt () {
+    # git add für Datei rückgängig machen mit 'grt [dateiname]'
+    # oder repository auf commit zurücksetzen (geänderte dateien bleiben erhalten) mit 'grt [SHA]'
+    git reset -q $1
+    gst
+}
+#alias grth='git reset --hard; gst' 
+grth () {
+    # Repository auf commit zurücksetzen mit 'grth [SHA]'
+    git reset --hard $1
+}
 alias grm='git rm' # Datei aus git und dem Dateisystem löschen
 alias grmc='git rm --cached' # Datei aus git löschen aber nich aus dem Dateisystem
 alias gcm='git commit -m' # normaler Commit mit gcm "[Message]"
 alias gcam='git commit --amend -m' # normale Commit Message ändern mit gcam "[neue Message]"
 alias gcs='git commit -S -m' # signierter Commit (GPG) mit gcs "[Message]"
 alias gcas='git commit --amend -S -m' # signierte Commit Message ändern (GPG) mit gcas "[neue Message]"
-alias gbr='git branch' # Branches anzeigen oder neuen Branch erstellen mit 'git branch [branchname]'
+alias gbr='git branch' # Branches anzeigen oder neuen Branch erstellen mit 'gbr [branchname]'
 alias gbrr='git branch -r' # Remote Branches anzeigen
 alias gco='git checkout ' # Branch wechseln oder Datei zurücksetzen mit 'git checkout --file.cpp'
 alias gcom='git checkout master' # zum Master Branch wechseln
@@ -74,7 +91,41 @@ glan () {
 
 #alias glcn'git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -n'
 
+
+#Git LFS
+
 alias glfi='git lfs install' # Installation von git LFS
 # https://docs.github.com/en/github/managing-large-files/installing-git-large-file-storage
 alias glft='git lfs track' # Datei mit git large files storage beobachten 'git lfs track [dateiname]' (geht auch mit dateitypen, besser nur im lokalen Repository nutzen)
 # https://docs.github.com/en/github/managing-large-files/configuring-git-large-file-storage
+
+
+
+# Git Bash Prompt
+
+# https://stackoverflow.com/questions/3162444/git-count-files-in-the-staged-index
+git_info_changed_tracked() {
+    if [ -d .git ]; then
+        git status -s | egrep "^ M" | wc -l | tr -d ' '
+    fi;
+}
+
+git_info_changed_staged() {
+    if [ -d .git ]; then
+        git status -s | egrep "^M" | wc -l | tr -d ' '
+    fi;
+}
+
+git_info(){
+    if [ -d .git ]; then
+        git_info_changed_tracked | git_info_changed_staged | tr -d ' '
+    fi;
+}
+
+parse_git_branch() {
+    if [ -d .git ]; then
+        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+    fi;
+}
+## replace PS1=.. in .bashrc with:
+#PS1='${debian_chroot:+($debian_chroot)}\[\e[01;32m\]\u\e[00m\]\[\e[01;93m\]@\e[00m\]\[\e[01;96m\]\h\[\e[00m\]\[\e[01;93m\]:\e[00m\]\[\e[01;34m\]\w\[\e[00m\]\e[32m$(parse_git_branch)\e[00m\]\e[31m$(git_info_changed_tracked)\e[00m\e[35m$(git_info_changed_staged)\e[00m\[\e[93m\]\$\[\e[00m\]'
