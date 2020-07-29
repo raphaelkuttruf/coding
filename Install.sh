@@ -21,3 +21,5 @@ else
 fi
 
 ssh -T git@github.com
+
+git lfs install
