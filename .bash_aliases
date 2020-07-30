@@ -20,8 +20,8 @@ alias gssha='ssh -T git@github.com' # Check Authentication with gssh or clone Re
 alias gds="git diff --stat | tail -n1" # Differenz Informationen anzeigen
 #alias gst='git status --untracked-files -s' 
 gst () {
-    # Repository Status abfragen und Infos zu Änderungen anzeigen
-    git status --untracked-files -s "$1"
+    # Repository Status abfragen und Infos zu Änderungen anzeigen (optionale Eingrenzung [dateiname/ordnername])
+    git status --untracked-files -s $1
     gds
 }
 alias gcl='git clone'
