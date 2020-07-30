@@ -43,13 +43,13 @@ alias grr='git restore' # Änderungen für Datei rückgängig machen mit 'grr [d
 grt () {
     # git add für Datei rückgängig machen mit 'grt [dateiname]'
     # oder repository auf commit zurücksetzen (geänderte dateien bleiben erhalten) mit 'grt [SHA]'
-    git reset -q "$1"
+    git reset -q $1
     gst
 }
 #alias grth='git reset --hard; gst' 
 grth () {
     # Repository auf commit zurücksetzen mit 'grth [SHA]'
-    git reset --hard "$1"
+    git reset --hard $1
 }
 alias grm='git rm' # Datei aus git und dem Dateisystem löschen
 alias grmc='git rm --cached' # Datei aus git löschen aber nich aus dem Dateisystem
