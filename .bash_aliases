@@ -21,19 +21,19 @@ alias gds="git diff --stat | tail -n1" # Differenz Informationen anzeigen
 #alias gst='git status --untracked-files -s' 
 gst () {
     # Repository Status abfragen und Infos zu Änderungen anzeigen
-    git status --untracked-files -s $1
+    git status --untracked-files -s "$1"
     gds
 }
 alias gcl='git clone'
 gclhttps () {
     # Clone Repository using https
     # $1 = user/repo
-    git clone https://github.com/$1.git
+    git clone https://github.com/"$1".git
 }
 gclssh () {
     # Clone Repository using SSH
     # $1 = user/repo
-    git clone git@github.com:$1.git
+    git clone git@github.com:"$1".git
 }
 alias ga='git add' # stage Datei [dateiname] 
 alias gau='git add --update' # stage nur geänderte Dateien
@@ -43,13 +43,13 @@ alias grr='git restore' # Änderungen für Datei rückgängig machen mit 'grr [d
 grt () {
     # git add für Datei rückgängig machen mit 'grt [dateiname]'
     # oder repository auf commit zurücksetzen (geänderte dateien bleiben erhalten) mit 'grt [SHA]'
-    git reset -q $1
+    git reset -q "$1"
     gst
 }
 #alias grth='git reset --hard; gst' 
 grth () {
     # Repository auf commit zurücksetzen mit 'grth [SHA]'
-    git reset --hard $1
+    git reset --hard "$1"
 }
 alias grm='git rm' # Datei aus git und dem Dateisystem löschen
 alias grmc='git rm --cached' # Datei aus git löschen aber nich aus dem Dateisystem
@@ -90,7 +90,7 @@ glan () {
     # $1 = author 
     # $2 = n 
    #echo "Parameter #author is $1 and #n is $2"
-    git log --author="$1" -n $2
+    git log --author="$1" -n "$2"
 }
 
 #alias glcn'git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -n'
@@ -102,6 +102,10 @@ alias glfi='git lfs install' # Installation von git LFS
 # https://docs.github.com/en/github/managing-large-files/installing-git-large-file-storage
 alias glft='git lfs track' # Datei mit git large files storage beobachten 'git lfs track [dateiname]' (geht auch mit dateitypen, besser nur im lokalen Repository nutzen)
 # https://docs.github.com/en/github/managing-large-files/configuring-git-large-file-storage
+glfmiea() {
+    # List files above specified size (b,kb,mb,gb,tb) with 
+    git lfs migrate info --everything --above="$1"
+}
 
 
 
