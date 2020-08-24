@@ -38,6 +38,7 @@ gclssh () {
 alias ga='git add' # stage Datei [dateiname] 
 alias gau='git add --update' # stage nur geänderte Dateien
 alias gaa='git add -A; gst' # stage alle Dateien, auch neue
+alias gru='git remote -v update'
 alias grr='git restore' # Änderungen für Datei rückgängig machen mit 'grr [dateiname]'
 #alias grt='git reset -q; gst'  
 grt () {
