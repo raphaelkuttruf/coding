@@ -23,6 +23,7 @@ gst () {
     # Repository Status abfragen und Infos zu Änderungen anzeigen (optionale Eingrenzung [dateiname/ordnername])
     git status --untracked-files -s $1
     gds
+    git stash list
 }
 alias gcl='git clone'
 gclhttps () {
@@ -38,6 +39,11 @@ gclssh () {
 alias ga='git add' # stage Datei [dateiname] 
 alias gau='git add --update' # stage nur geänderte Dateien
 alias gaa='git add -A; gst' # stage alle Dateien, auch neue
+alias gsh='git stash' # Änderungen sichern ohne commit
+alias gshm='git stash -m' # Änderungen sichern ohne commit mit Infotext
+alias gsha='git stash apply' # zuletzt gesicherte Änderung anwenden, optional mit Nummer der Sicherung
+alias gshl='git stash list' # gesicherte Änderung auflisten
+alias gshc='git stash clear' # alle gesicherte Änderung löschen
 alias grr='git restore' # Änderungen für Datei rückgängig machen mit 'grr [dateiname]'
 #alias grt='git reset -q; gst'  
 grt () {
