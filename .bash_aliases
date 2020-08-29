@@ -44,6 +44,7 @@ alias gshm='git stash -m' # Änderungen sichern ohne commit mit Infotext
 alias gsha='git stash apply' # zuletzt gesicherte Änderung anwenden, optional mit Nummer der Sicherung
 alias gshl='git stash list' # gesicherte Änderung auflisten
 alias gshc='git stash clear' # alle gesicherte Änderung löschen
+alias gru='git remote -v update' # lokales remote Repository aktualisieren
 alias grr='git restore' # Änderungen für Datei rückgängig machen mit 'grr [dateiname]'
 #alias grt='git reset -q; gst'  
 grt () {
