@@ -82,6 +82,7 @@ alias grv='git remote -v' # Remote Repositorys anzeigen
 
 alias glg='git log' # Die Commit Historie anzeigen mit 'glg'
 alias gln='git log -n' # Die letzten n Commits anzeigen mit 'gln [n]'
+alias glodag='git log --oneline --decorate --all --graph' # Sehr kompakter kompletter git log mit graf
 alias glm='git log --author="$(git config user.name)" -n' # Meine Commits anzeigen mit 'glm' (git log me)
 alias glmn='git log --author="$(git config user.name)" -n' # Meine letzten n Commits anzeigen mit 'glmn [n]' (git log me n)
 # Commits von bestimmtem Autor anzeigen mit 'gla "[author]"'
