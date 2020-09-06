@@ -14,8 +14,9 @@ alias lr='ll -R' # Recursiv
 #alias la='ll -A' # Alles in diesem Verzeichnis
 
 # Git
-
-alias gv='git --version'
+alias gv='git --version' # git version abfragen
+alias gi='git init' # 'arbeits' repository erstellen
+alias gib='git init --bare' # 'lokales' remote repository erstellen
 alias gssha='ssh -T git@github.com' # Check Authentication with gssh or clone Repository with gssh:[user]/[repo].git]
 alias gds="git diff --stat | tail -n1" # Differenz Informationen anzeigen
 #alias gst='git status --untracked-files -s' 
