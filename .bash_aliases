@@ -40,6 +40,7 @@ gclssh () {
 alias ga='git add' # stage Datei [dateiname] 
 alias gau='git add --update' # stage nur geänderte Dateien
 alias gaa='git add -A; gst' # stage alle Dateien, auch neue
+alias gf='git fetch' # Änderungen im remote Repository 'abfragen'
 alias gsh='git stash' # Änderungen sichern ohne commit
 alias gshm='git stash -m' # Änderungen sichern ohne commit mit Infotext
 alias gsha='git stash apply' # zuletzt gesicherte Änderung anwenden, optional mit Nummer der Sicherung
