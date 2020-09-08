@@ -2,15 +2,15 @@
 
 if [[ -f ~/.ssh/id_rsa_github ]]
 then
-echo "The configured SSH Key already exists."
+echo "Your SSH Key id_rsa_github for Github already exists."
 else
-echo "The configured SSH Key doesn't exist. Let's create one."
+echo "Your SSH Key id_rsa_github for Github doesn't exist. Let's create it."
 read -p "Your Email: " email
     ssh-keygen -t rsa -b 4096 -C "$email" -f ~/.ssh/id_rsa_github
     echo
     cat ~/.ssh/id_rsa_github.pub
     echo
-    echo "Add This Key to your Github Account before you continue."
+    echo "Add this Key to your Github Account before you continue."
     echo
     history -c
 fi
