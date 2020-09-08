@@ -4,13 +4,14 @@
 # Allgemein
 alias ..='cd ..'
 
+alias lsl='ls -lF --group-directories-first'
 alias ll='ls -alF --group-directories-first'
 alias la='ls -AF --group-directories-first'
-alias l='ls -CF'
+alias l='ls -CF --group-directories-first'
+alias lr='ll -R --group-directories-first' # Recursiv
 
 #alias ls="ls -lv --group-directories-first" # Alphabetische Liste, Ordner zuerst
 #alias ll='ls -l' # Details
-alias lr='ll -R' # Recursiv
 #alias la='ll -A' # Alles in diesem Verzeichnis
 
 # Git
