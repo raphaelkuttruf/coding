@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# secure acess to ssh directory and files
+touch ~/.ssh
+chmod 700 ~/.ssh
+touch ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+
 # Copy .bashrc to ~/ if it doesn't exist. (most likely on windows)
 if [[ -f ~/.bashrc ]]
 then
