@@ -2,7 +2,7 @@
 
 email=$(git config --global --get user.email)
 
-if [[  ! -z $email ]] && [[ ${#email} -ge 5 ]] # email is not empty and at least 5 characters long (x@y.z)
+if [[  ! -z $email ]] && [[ ${#email} -ge 5 ]] && [[ $email == *"@"* ]] # email is not empty and at least 5 characters long (x@y.z) and contains ""
 then
     echo "Your Git user.email is:      "$email
 else
