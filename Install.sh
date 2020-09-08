@@ -1,9 +1,5 @@
 #!/bin/bash
 
-./CreateGitUserName.sh
-./CreateGitUserEmail.sh
-./CreateGitSigningKey.sh
-
 # Copy .bashrc to ~/ if it doesn't exist. (most likely on windows)
 if [[ -f ~/.bashrc ]]
 then
@@ -15,6 +11,8 @@ fi
 # Copy .bash_aliases to ~/
 cp .bash_aliases ~
 
+./CreateGitUserName.sh
+./CreateGitUserEmail.sh
 ./CreateGithubSSHKey.sh
 
 # Copy config to ~/.ssh/ if it doesn't exist. (most likely on windows)
@@ -29,3 +27,5 @@ fi
 ssh -T git@github.com
 
 git lfs install
+
+./CreateGitSigningKey.sh
