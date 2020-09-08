@@ -1,6 +1,7 @@
 #!/bin/bash
 
-./CreateGitUserAndEmail.sh
+./CreateGitUserName.sh
+./CreateGitUserEmail.sh
 ./CreateGitSigningKey.sh
 
 # Copy .bashrc to ~/ if it doesn't exist. (most likely on windows)
