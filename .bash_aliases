@@ -147,4 +147,5 @@ parse_git_branch() {
     fi;
 }
 ## replace PS1=.. in .bashrc with:
-#PS1='${debian_chroot:+($debian_chroot)}\[\e[01;32m\]\u\e[00m\]\[\e[01;93m\]@\e[00m\]\[\e[01;96m\]\h\[\e[00m\]\[\e[01;93m\]:\e[00m\]\[\e[01;34m\]\w\[\e[00m\]\e[32m$(parse_git_branch)\e[00m\]\e[31m$(git_info_changed_tracked)\e[00m\e[35m$(git_info_changed_staged)\e[00m\[\e[93m\]$ \[\e[00m\]'
+#PS1='${debian_chroot:+($debian_chroot)}\[\e[01;32m\]\u\[\e[00m\e[01;93m\]@\[\e[00m\e[01;96m\]\h\[\e[00m\e[01;93m\]:\[\e[00m\e[01;34m\]\w\[\e[00m\e[32m\]$(parse_git_branch)\[\e[00m\e[31m\]$(git_info_changed_tracked)\[\e[00m\e[35m\]$(git_info_changed_staged)\[\e[00m\e[93m\]$ \[\e[00m\]'
+    
