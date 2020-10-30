@@ -11,8 +11,8 @@ fi
 # Copy .bash_aliases to ~/
 cp ~/coding/.bash_aliases ~
 
-~/coding/./CreateGitUserName.sh
-~/coding/./CreateGitUserEmail.sh
+~/coding/CreateGitUserName.sh
+~/coding/CreateGitUserEmail.sh
 
 # Create ssh directory
 if [[ -d ~/.ssh ]]
@@ -27,7 +27,7 @@ chmod 700 ~/.ssh
 touch ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 
-./~/coding/CreateGithubSSHKey.sh
+~/coding/CreateGithubSSHKey.sh
 
 # Copy config to ~/.ssh/ if it doesn't exist. (most likely on windows)
 if [[ -f ~/.ssh/config ]]
@@ -51,4 +51,4 @@ ssh -T git@github.com
 
 git lfs install
 
-./~/coding/CreateGitSigningKey.sh
+~/coding/CreateGitSigningKey.sh
