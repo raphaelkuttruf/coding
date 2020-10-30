@@ -5,7 +5,7 @@ if [[ -f ~/.bashrc ]]
 then
     echo "Your Bash .bashrc exists."
 else
-    cp .bashrc ~
+    cp ~/coding/.bashrc ~
 fi
 
 # Copy .bash_aliases to ~/
@@ -35,7 +35,7 @@ then
     echo "Your SSH config for Github exists."
 else
     echo "Default SSH config file for Github was copied to ~/.ssh/."
-    cp config ~/.ssh
+    cp ~/coding/config ~/.ssh
 fi
 
 # Secure acess to ssh config
