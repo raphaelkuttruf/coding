@@ -106,7 +106,9 @@ glan () {
 
 #alias glcn'git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -n'
 
-
+alias gsw='git show --stat' # Zeige jede vom Commit betroffene Datei mit gsw [SHA]
+alias gswo='git show --stat --oneline' # Zeige in einer Zeile jede vom Commit betroffene Datei mit gswo [SHA]
+ 
 #Git LFS
 
 alias glfi='git lfs install' # Installation von git LFS
