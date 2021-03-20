@@ -6,10 +6,12 @@ then
     echo "Your Bash .bashrc exists."
 else
     cp ~/coding/.bashrc ~
+    echo "File .bashrc copied to ~."
 fi
 
 # Copy .bash_aliases to ~/
 cp ~/coding/.bash_aliases ~
+echo "File .bash_aliases copied to ~."
 
 ~/coding/CreateGitUserName.sh
 ~/coding/CreateGitUserEmail.sh

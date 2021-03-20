@@ -1,7 +1,8 @@
-# Linux
-## wird mit ./InstallOnLinux.sh nach ~ kopiert
+#!/bin/bash
 
-# Allgemein
+# Diese Datei wird mit ./Install.sh nach ~ kopiert
+
+# Linux/Bash Allgemein
 alias ..='cd ..'
 
 alias lsl='ls -lF --group-directories-first'
